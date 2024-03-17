@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from rhythmix.models import Song
 
 def index(request):
-    return render(request, 'index.htm')
+    song = Song.objects.all()
+    return render(request, 'index.htm',{'song': song})
